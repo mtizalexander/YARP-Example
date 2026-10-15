@@ -1,0 +1,15 @@
+/* Proxima Centauri: ember red and charcoal, flare-lit */
+body { background: #1a0d0b; color: #f3e3d8; }
+a { color: #ff7a45; }
+a:hover { color: #ffa070; }
+.site-nav { background: #0f0605; border-bottom: 3px solid #d9381e; }
+.site-nav .navbar-brand, .site-nav .nav-link { color: #ff7a45; font-weight: 600; }
+.site-nav .nav-link:hover { color: #ffb08a; }
+.hero { padding: 4rem 1rem; text-align: left; background: linear-gradient(135deg, #5c1408 0%, #1a0d0b 65%); border-bottom: 1px solid #d9381e66; }
+.hero h1 { font-weight: 800; color: #ff9466; text-transform: uppercase; }
+.card-attraction { background: #261310; border: 1px solid #d9381e66; color: #f3e3d8; border-radius: 0; }
+.card-attraction .card-title a { color: #ff9466; text-decoration: none; }
+.badge-real { background: #b5541f; }
+.badge-fiction { background: #c0267a; }
+.advice { border-left: 4px solid #d9381e; padding: .75rem 1rem; background: #261310; }
+.footer { background: #0f0605; color: #a08880; }

@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Flare Watch";
+    var attraction = new Attraction
+    {
+        Name = "Flare Watch",
+        Action = "FlareWatch",
+        Tagline = "Front-row seats to violent stellar flares from a shielded observation deck.",
+        IsFictional = false,
+        Description = "Proxima Centauri is a flare star, prone to sudden bursts of brightness and radiation. Flare Watch is a hardened deck with a countdown board that forecasts outbursts, letting guests watch the spectacle safely.",
+        Highlights = ["Live flare forecasts", "Auroral displays in the upper atmosphere", "Ultraviolet-filtered viewing glass"],
+        VisitorAdvice = "When the siren sounds, move to the inner bunker lounge."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    var attractions = new List<Attraction>
+    {
+        new() { Name = "Proxima b", Action = "ProximaB", IsFictional = false, Description = "", Tagline = "The closest exoplanet to Earth, tidally locked under a red dwarf sun." },
+        new() { Name = "Flare Watch", Action = "FlareWatch", IsFictional = false, Description = "", Tagline = "Front-row seats to violent stellar flares from a shielded observation deck." },
+        new() { Name = "The Ember Market", Action = "EmberMarket", IsFictional = true, Description = "", Tagline = "A twilight-belt bazaar where traders barter in starlight and heat." }
+    };
+}
+
+<section class="hero mb-5">
+    <h1 class="display-3">Proxima Centauri</h1>
+    <p class="lead">Just 4.2 light-years away. The nearest getaway to Earth, lit by a restless red sun.</p>
+</section>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var a in attractions)
+    {
+        <div class="col">
+            <div class="card card-attraction h-100">
+                <div class="card-body">
+                    <span class="badge @(a.IsFictional ? "badge-fiction" : "badge-real")">@(a.IsFictional ? "Fantastical" : "Real world")</span>
+                    <h2 class="card-title h4 mt-2"><a asp-controller="Attractions" asp-action="@a.Action">@a.Name</a></h2>
+                    <p class="card-text">@a.Tagline</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

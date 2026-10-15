@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Kepler-90h";
+    var attraction = new Attraction
+    {
+        Name = "Kepler-90h",
+        Action = "Kepler90h",
+        Tagline = "A temperate gas giant in the habitable zone, with a fleet of moons to explore.",
+        IsFictional = false,
+        Description = "Kepler-90h is a Jupiter-sized planet orbiting in its star's habitable zone. Its surface is hidden beneath deep cloud, but any large moons here could hold liquid water. Tours depart from orbit and weave between the moons.",
+        Highlights = ["Cloud-top skimming flights", "Moon-hopping excursions", "Banded storms visible from orbit"],
+        VisitorAdvice = "Heavy radiation belts are likely; shielded cabins are mandatory."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

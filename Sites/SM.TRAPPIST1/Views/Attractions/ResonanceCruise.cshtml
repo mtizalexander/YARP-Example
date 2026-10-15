@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Resonance Cruise";
+    var attraction = new Attraction
+    {
+        Name = "Resonance Cruise",
+        Action = "ResonanceCruise",
+        Tagline = "A luxury liner that glides between planets in perfect orbital rhythm.",
+        IsFictional = true,
+        Description = "The seven planets move in a resonant chain, each orbit a neat ratio of its neighbor's. The Resonance Cruise rides that rhythm, with a ship timed to dock at each world just as it aligns, accompanied by a live orchestra tuned to the orbits.",
+        Highlights = ["Seven ports in seven days", "Orbital-ratio orchestra", "Zero-gravity ballroom"],
+        VisitorAdvice = "Pack light; the ship leaves exactly on the beat."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

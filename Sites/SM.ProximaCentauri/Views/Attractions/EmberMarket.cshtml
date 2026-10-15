@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "The Ember Market";
+    var attraction = new Attraction
+    {
+        Name = "The Ember Market",
+        Action = "EmberMarket",
+        Tagline = "A twilight-belt bazaar where traders barter in starlight and heat.",
+        IsFictional = true,
+        Description = "Stalls glow along the terminator, selling heat-forged trinkets, red-light lanterns, and meals cooked on the dayside wind. Haggling is done in warmth: a good deal is paid for in stored sunlight.",
+        Highlights = ["Dayside-wind street food", "Handmade ember lanterns", "Nightside ice sculptures"],
+        VisitorAdvice = "Bring a heat pack to trade; stalls rarely accept anything colder."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

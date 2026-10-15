@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Seven Worlds Skyway";
+    var attraction = new Attraction
+    {
+        Name = "Seven Worlds Skyway",
+        Action = "SevenWorldsSkyway",
+        Tagline = "A glass-floored promenade where neighboring planets fill the sky.",
+        IsFictional = true,
+        Description = "Built on a ridge of TRAPPIST-1f, the Skyway offers a view of planets that appear larger than our Moon. Guests stroll a transparent walkway above the clouds as worlds drift past overhead.",
+        Highlights = ["Glass-floor walkway", "Neighbor-planet sky charts", "Sunset-colored cocktail bar"],
+        VisitorAdvice = "Visit during a conjunction, when several planets hang in view at once."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

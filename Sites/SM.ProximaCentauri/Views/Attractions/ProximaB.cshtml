@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Proxima b";
+    var attraction = new Attraction
+    {
+        Name = "Proxima b",
+        Action = "ProximaB",
+        Tagline = "The closest exoplanet to Earth, tidally locked under a red dwarf sun.",
+        IsFictional = false,
+        Description = "Proxima b orbits in the habitable zone of Proxima Centauri every 11 days. One side always faces the star, the other is in permanent night, leaving a narrow twilight belt where temperatures may allow liquid water.",
+        Highlights = ["Walk the twilight terminator", "Permanent sunset photography", "A dim red sun that never moves"],
+        VisitorAdvice = "Stay in the twilight belt; the dayside is scorched and the nightside is frozen."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

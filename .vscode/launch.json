@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: Kepler 90 Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Sites/SM.Kepler90/SM.Kepler90.csproj"
+        },
+        {
+            "name": "C#: Proxima Centauri Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Sites/SM.ProximaCentauri/SM.ProximaCentauri.csproj"
+        },
+        {
+            "name": "C#: TRAPPIST 1 Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Sites/SM.TRAPPIST1/SM.TRAPPIST1.csproj"
+        },
+        {
+            "name": "C#:Home Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Sites/SM.Home/SM.Home.csproj"
+        },
+        {
+            "name": "C#: PROXY Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/SM.Proxy/SM.Proxy.csproj"
+        },
+
+    ],
+    "compounds": [
+        {
+            "name": "Debug All",
+            "configurations": [
+                "C#: Kepler 90 Debug",
+                "C#: Proxima Centauri Debug",
+                "C#: PROXY Debug",
+                "C#: TRAPPIST 1 Debug"
+            ]
+        }
+    ]
+}

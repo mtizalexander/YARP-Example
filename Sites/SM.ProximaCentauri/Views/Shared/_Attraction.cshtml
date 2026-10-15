@@ -1,0 +1,28 @@
+@model Attraction
+
+<article class="attraction">
+    <p><a asp-controller="Home" asp-action="Index">&larr; All attractions</a></p>
+    <h1 class="display-5">@Model.Name</h1>
+    <p class="lead">@Model.Tagline</p>
+    <span class="badge @(Model.IsFictional ? "badge-fiction" : "badge-real")">@(Model.IsFictional ? "Fantastical" : "Real world")</span>
+
+    <p class="mt-4">@Model.Description</p>
+
+    @if (Model.Highlights.Count > 0)
+    {
+        <h2 class="h4">Highlights</h2>
+        <ul>
+            @foreach (var highlight in Model.Highlights)
+            {
+                <li>@highlight</li>
+            }
+        </ul>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.VisitorAdvice))
+    {
+        <div class="advice mt-4">
+            <strong>Visitor advice:</strong> @Model.VisitorAdvice
+        </div>
+    }
+</article>

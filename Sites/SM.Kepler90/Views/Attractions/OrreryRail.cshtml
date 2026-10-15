@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "The Orrery Rail";
+    var attraction = new Attraction
+    {
+        Name = "The Orrery Rail",
+        Action = "OrreryRail",
+        Tagline = "Ride a brass monorail that threads all eight planets in a single afternoon.",
+        IsFictional = true,
+        Description = "Because the eight Kepler-90 planets all orbit within the distance Earth is from the Sun, a single looping rail can visit each one. Polished brass carriages glide on gravity-tuned tracks while a conductor narrates each world.",
+        Highlights = ["Eight stops, one ticket", "Observation dome carriage", "Afternoon tea over Kepler-90g"],
+        VisitorAdvice = "Book the window seat on the inner loop for the best view of the planets lining up."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Furnace Beach";
+    var attraction = new Attraction
+    {
+        Name = "Furnace Beach",
+        Action = "FurnaceBeach",
+        Tagline = "Sunbathe in a shielded glass cove on scorched Kepler-90b.",
+        IsFictional = true,
+        Description = "Kepler-90b circles its star in under eight days, with surface temperatures well above 700 K. A resort of reflective glass domes lets guests lounge on molten-glass sands while the star blazes overhead.",
+        Highlights = ["Lava-glass sand sculpting", "Heat-proof infinity pools", "Sunrise every eight days"],
+        VisitorAdvice = "Wear the issued thermal suit at all times outside the domes."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "TRAPPIST-1e";
+    var attraction = new Attraction
+    {
+        Name = "TRAPPIST-1e",
+        Action = "Trappist1e",
+        Tagline = "A rocky, Earth-sized world in the habitable zone, perhaps with oceans.",
+        IsFictional = false,
+        Description = "TRAPPIST-1e is about the size of Earth and receives similar energy from its dim red star. Models suggest it could hold a global ocean, making it one of the most promising worlds for visitors.",
+        Highlights = ["Coastal drifts under a huge, orange sky", "Snorkeling tours", "Six neighbor planets visible by day"],
+        VisitorAdvice = "The year lasts only six days, so plan short stays."
+    };
+}
+
+<partial name="_Attraction" model="attraction" />

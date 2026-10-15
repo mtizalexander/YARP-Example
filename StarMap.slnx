@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/SM.Common/SM.Common.csproj" />
+    <Project Path="Shared/SM.Core/SM.Core.csproj" />
+    <Project Path="Shared/SM.Domain/SM.Domain.csproj" />
+    <Project Path="Shared/SM.Infrastructure/SM.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Sites/">
+    <Project Path="Sites/SM.Home/SM.Home.csproj" />
+    <Project Path="Sites/SM.Kepler90/SM.Kepler90.csproj" />
+    <Project Path="Sites/SM.ProximaCentauri/SM.ProximaCentauri.csproj" />
+    <Project Path="Sites/SM.TRAPPIST1/SM.TRAPPIST1.csproj" />
+  </Folder>
+  <Project Path="SM.Proxy/SM.Proxy.csproj" />
+</Solution>

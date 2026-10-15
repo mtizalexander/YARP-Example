@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    var attractions = new List<Attraction>
+    {
+        new() { Name = "TRAPPIST-1e", Action = "Trappist1e", IsFictional = false, Description = "", Tagline = "A rocky, Earth-sized world in the habitable zone, perhaps with oceans." },
+        new() { Name = "Resonance Cruise", Action = "ResonanceCruise", IsFictional = true, Description = "", Tagline = "A luxury liner that glides between planets in perfect orbital rhythm." },
+        new() { Name = "Seven Worlds Skyway", Action = "SevenWorldsSkyway", IsFictional = true, Description = "", Tagline = "A glass-floored promenade where neighboring planets fill the sky." }
+    };
+}
+
+<section class="hero mb-5">
+    <h1 class="display-3">TRAPPIST-1</h1>
+    <p class="lead">Seven Earth-sized worlds packed closer than Mercury is to our Sun. Pack a swimsuit.</p>
+</section>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var a in attractions)
+    {
+        <div class="col">
+            <div class="card card-attraction h-100">
+                <div class="card-body">
+                    <span class="badge @(a.IsFictional ? "badge-fiction" : "badge-real")">@(a.IsFictional ? "Fantastical" : "Real world")</span>
+                    <h2 class="card-title h4 mt-2"><a asp-controller="Attractions" asp-action="@a.Action">@a.Name</a></h2>
+                    <p class="card-text">@a.Tagline</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

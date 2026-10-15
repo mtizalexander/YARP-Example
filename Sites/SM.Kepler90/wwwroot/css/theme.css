@@ -1,0 +1,15 @@
+/* Kepler-90: deep navy and brass, orrery-inspired */
+body { background: #0b1226; color: #e8e2d0; }
+a { color: #d9b44a; }
+a:hover { color: #f2d57e; }
+.site-nav { background: #060a18; border-bottom: 2px solid #d9b44a; }
+.site-nav .navbar-brand, .site-nav .nav-link { color: #d9b44a; letter-spacing: .08em; text-transform: uppercase; }
+.site-nav .nav-link:hover { color: #f2d57e; }
+.hero { padding: 4rem 1rem; text-align: center; background: radial-gradient(circle at 50% 120%, #26356b 0%, #0b1226 70%); border-bottom: 1px solid #d9b44a55; }
+.hero h1 { font-family: Georgia, serif; color: #f2d57e; }
+.card-attraction { background: #121b38; border: 1px solid #d9b44a66; color: #e8e2d0; }
+.card-attraction .card-title a { color: #f2d57e; text-decoration: none; }
+.badge-real { background: #2f7d6d; }
+.badge-fiction { background: #8a3ea8; }
+.advice { border-left: 4px solid #d9b44a; padding: .75rem 1rem; background: #121b38; }
+.footer { background: #060a18; color: #9a957f; }

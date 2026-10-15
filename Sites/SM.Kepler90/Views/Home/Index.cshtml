@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    var attractions = new List<Attraction>
+    {
+        new() { Name = "Kepler-90h", Action = "Kepler90h", IsFictional = false, Description = "", Tagline = "A temperate gas giant in the habitable zone, with a fleet of moons to explore." },
+        new() { Name = "The Orrery Rail", Action = "OrreryRail", IsFictional = true, Description = "", Tagline = "Ride a brass monorail that threads all eight planets in a single afternoon." },
+        new() { Name = "Furnace Beach", Action = "FurnaceBeach", IsFictional = true, Description = "", Tagline = "Sunbathe in a shielded glass cove on scorched Kepler-90b." }
+    };
+}
+
+<section class="hero mb-5">
+    <h1 class="display-3">Kepler-90</h1>
+    <p class="lead">Eight worlds. One star. The most crowded planetary system ever charted, 2,500 light-years from home.</p>
+</section>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var a in attractions)
+    {
+        <div class="col">
+            <div class="card card-attraction h-100">
+                <div class="card-body">
+                    <span class="badge @(a.IsFictional ? "badge-fiction" : "badge-real")">@(a.IsFictional ? "Fantastical" : "Real world")</span>
+                    <h2 class="card-title h4 mt-2"><a asp-controller="Attractions" asp-action="@a.Action">@a.Name</a></h2>
+                    <p class="card-text">@a.Tagline</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

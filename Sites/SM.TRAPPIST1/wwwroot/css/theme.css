@@ -1,0 +1,15 @@
+/* TRAPPIST-1: teal and coral, playful and oceanic */
+body { background: #effaf8; color: #12343b; }
+a { color: #0b7f87; }
+a:hover { color: #075c62; }
+.site-nav { background: #0b7f87; }
+.site-nav .navbar-brand, .site-nav .nav-link { color: #fff; font-weight: 600; }
+.site-nav .nav-link:hover { color: #ffd3c2; }
+.hero { padding: 4rem 1rem; text-align: center; background: linear-gradient(180deg, #7fd6cf 0%, #effaf8 100%); border-radius: 0 0 2rem 2rem; }
+.hero h1 { font-weight: 800; color: #0a4f56; }
+.card-attraction { background: #fff; border: 2px solid #7fd6cf; border-radius: 1rem; color: #12343b; }
+.card-attraction .card-title a { color: #0b7f87; text-decoration: none; }
+.badge-real { background: #0b7f87; }
+.badge-fiction { background: #ff7f5c; }
+.advice { border-left: 4px solid #ff7f5c; padding: .75rem 1rem; background: #fff; border-radius: .5rem; }
+.footer { background: #d6f1ed; color: #3d6b70; }
