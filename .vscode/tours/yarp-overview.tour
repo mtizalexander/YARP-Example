@@ -1,0 +1,86 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "YARP for IIS Users",
+  "steps": [
+    {
+      "file": "SM.Proxy/Program.cs",
+      "line": 1,
+      "description": "This is the entry point for the reverse proxy. YARP is being added to the ASP.NET pipeline, then configured from appsettings and mapped so it can receive requests and forward them onward. If you are familiar with IIS, think of this as the front-end listener or proxy endpoint."
+    },
+    {
+      "file": "SM.Proxy/appsettings.json",
+      "line": 1,
+      "description": "The configuration here is the key concept: YARP does not guess where traffic should go; it is told exactly what to do. In IIS terms, this is similar to a front-end site with URL rewrite rules and backend application bindings."
+    },
+    {
+      "file": "SM.Proxy/appsettings.json",
+      "line": 7,
+      "description": "Routes define the incoming URL patterns. For example, /kepler90/{**remainder} is a path-based rule. In IIS, this is similar to a rewrite rule or a request filtering rule that decides which backend site should handle a request."
+    },
+    {
+      "file": "SM.Proxy/appsettings.json",
+      "line": 24,
+      "description": "Each route points to a ClusterId, which is a named collection of backend servers. This is the YARP equivalent of an IIS application or a backend site group. The proxy decides: 'this URL matches route X, so send it to cluster Y.'"
+    },
+    {
+      "file": "SM.Proxy/appsettings.json",
+      "line": 27,
+      "description": "Clusters contain Destinations, which are the actual upstream URLs. Here, each cluster points to a local site, such as http://localhost:8081, 8082, 8083, or 8084. This is basically the backend application endpoint that IIS would have sent the request to."
+    },
+    {
+      "file": "SM.Proxy/appsettings.json",
+      "line": 8,
+      "description": "The default route, /{**catch-all}, acts like a catch-all front door. If no more specific route matches, the request falls through to the home site. This is similar to a default site in IIS, except it is driven by path rules instead of host or site bindings."
+    },
+    {
+      "file": "SM.Proxy/Program.cs",
+      "line": 12,
+      "description": "The final step is app.MapReverseProxy(). This tells ASP.NET to pass requests through YARP's routing and forwarding pipeline. In IIS terms, the app is now acting like a reverse proxy that receives requests and forwards them to the correct backend site without exposing all the backend URLs to the client."
+    },
+    {
+      "file": "SM.Proxy/Program.cs",
+      "line": 6,
+      "description": "AddTelemetry() wires up OpenTelemetry for the proxy. Because every request passes through the proxy, it is a good place to see traffic across all the sites. Think of it as IIS request logging, but exported in a standard format that many tools understand."
+    },
+    {
+      "file": "SM.Proxy/TelemetryConfiguration.cs",
+      "line": 22,
+      "description": "Tracing is enabled for ASP.NET Core, outgoing HttpClient calls, and the Yarp.ReverseProxy source. That means each proxied request produces a trace showing the incoming request and the forwarded request to the backend site."
+    },
+    {
+      "file": "SM.Proxy/TelemetryConfiguration.cs",
+      "line": 25,
+      "description": "The OTLP exporter pushes traces over HTTP/protobuf to the endpoint from HostSettings. The app does not host a UI for this; it only sends data to a receiver."
+    },
+    {
+      "file": "Shared/SM.Common/Configuration/HostSettings.cs",
+      "line": 6,
+      "description": "The OTLP endpoint is http://localhost:4318, the standard OTLP/HTTP port. Anything listening here receives the proxy's telemetry."
+    },
+    {
+      "file": "Tools/Start-OtelServer.ps1",
+      "line": 25,
+      "description": "This script is a minimal stand-in for a collector such as Jaeger. It listens on 4318 using HttpListener. A single pending GetContextAsync task is reused between loop iterations so requests are not dropped, and the short sleep keeps Ctrl+C responsive."
+    },
+    {
+      "file": "Tools/Start-OtelServer.ps1",
+      "line": 49,
+      "description": "Each request body is written to the console and appended to otel-echo.log. The OTLP/HTTP body is protobuf by default, so it may look like unreadable binary; the point is to confirm the proxy is exporting traces."
+    },
+    {
+      "file": "Tests/SM.Proxy.Tests/YarpProxyIntegrationTests.cs",
+      "line": 23,
+      "description": "The integration tests start each site and the proxy (skipping any port already in use), wait for the proxy to respond, then run requests through it. This verifies the routes and clusters in appsettings.json actually reach the right backend."
+    },
+    {
+      "file": "Tests/SM.Proxy.Tests/StarMapHttpClient.cs",
+      "line": 23,
+      "description": "StarMapHttpClient exposes one method per proxied endpoint (home, privacy, kepler90, proximaCentauri, trappist1). Each returns a StarMapHttpResult with the HTTP status, headers, body, and values pulled from the HTML with regex, such as the page title and card names."
+    },
+    {
+      "file": "Tests/SM.Proxy.Tests/StarMapHttpClient.cs",
+      "line": 134,
+      "description": "StarMapHttpResult is the DTO the tests assert against. Checking extracted titles from each site's page is how the tests prove a request was routed to the correct backend."
+    }
+  ]
+}

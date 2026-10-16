@@ -4,7 +4,7 @@
     <p><a asp-controller="Home" asp-action="Index">&larr; All attractions</a></p>
     <h1 class="display-5">@Model.Name</h1>
     <p class="lead">@Model.Tagline</p>
-    <span class="badge @(Model.IsFictional ? "badge-fiction" : "badge-real")">@(Model.IsFictional ? "Fantastical" : "Real world")</span>
+    <span class="badge @(Model.IsFictional ? "badge-fiction" : "badge-real")">@(Model.IsFictional ? "Fantasy" : "Real world")</span>
 
     <p class="mt-4">@Model.Description</p>
 

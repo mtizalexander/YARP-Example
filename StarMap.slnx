@@ -11,5 +11,8 @@
     <Project Path="Sites/SM.ProximaCentauri/SM.ProximaCentauri.csproj" />
     <Project Path="Sites/SM.TRAPPIST1/SM.TRAPPIST1.csproj" />
   </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/SM.Proxy.Tests/SM.Proxy.Tests.csproj" />
+  </Folder>
   <Project Path="SM.Proxy/SM.Proxy.csproj" />
 </Solution>

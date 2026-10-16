@@ -1,8 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Choose Your Star";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<section class="text-center py-5">
+    <h1 class="display-3 hub-title">StarMap</h1>
+    <p class="lead hub-lead">Three stars. Three journeys. Pick a destination and start exploring.</p>
+</section>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 pb-5">
+    <div class="col">
+        <a class="hero-link hero-kepler h-100" href="/kepler90/">
+            <h2>Kepler-90</h2>
+            <p>Eight worlds around one star, the most crowded system ever charted.</p>
+            <span class="cta">Explore &rarr;</span>
+        </a>
+    </div>
+    <div class="col">
+        <a class="hero-link hero-proxima h-100" href="/proximaCentauri/">
+            <h2>Proxima Centauri</h2>
+            <p>Our nearest stellar neighbour, glowing red just over four light-years away.</p>
+            <span class="cta">Explore &rarr;</span>
+        </a>
+    </div>
+    <div class="col">
+        <a class="hero-link hero-trappist h-100" href="/trappist1/">
+            <h2>TRAPPIST-1</h2>
+            <p>Seven rocky worlds huddled around an ultracool dwarf.</p>
+            <span class="cta">Explore &rarr;</span>
+        </a>
+    </div>
 </div>

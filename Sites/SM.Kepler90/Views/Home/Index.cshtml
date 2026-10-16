@@ -19,7 +19,7 @@
         <div class="col">
             <div class="card card-attraction h-100">
                 <div class="card-body">
-                    <span class="badge @(a.IsFictional ? "badge-fiction" : "badge-real")">@(a.IsFictional ? "Fantastical" : "Real world")</span>
+                    <span class="badge @(a.IsFictional ? "badge-fiction" : "badge-real")">@(a.IsFictional ? "Fantasy" : "Real world")</span>
                     <h2 class="card-title h4 mt-2"><a asp-controller="Attractions" asp-action="@a.Action">@a.Name</a></h2>
                     <p class="card-text">@a.Tagline</p>
                 </div>

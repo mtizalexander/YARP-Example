@@ -1,0 +1,102 @@
+body {
+    background: radial-gradient(ellipse at top, #1b1f4a 0%, #0a0b1e 60%, #04040d 100%) fixed;
+    color: #e8eaff;
+}
+
+.navbar, .footer {
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+
+.navbar .navbar-brand, .navbar .nav-link, .footer, .footer a {
+    color: #c9cdff !important;
+}
+
+.hub-title {
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ffd27a, #ff7ad9, #7ab8ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hub-lead {
+    max-width: 40rem;
+    margin: 0 auto;
+    color: #aab0e8;
+}
+
+.hero-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 16rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, .15);
+    background: var(--hero-bg);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.hero-link::before {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    right: -3rem;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    background: var(--hero-orb);
+    filter: blur(2px);
+    opacity: .85;
+}
+
+.hero-link:hover {
+    color: #fff;
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2.5rem var(--hero-glow);
+}
+
+.hero-link h2 {
+    position: relative;
+    font-weight: 700;
+}
+
+.hero-link p {
+    position: relative;
+    margin: 0;
+    color: rgba(255, 255, 255, .8);
+}
+
+.hero-link .cta {
+    position: relative;
+    margin-top: 1rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.hero-kepler {
+    --hero-bg: linear-gradient(160deg, #3a1c71, #d76d77 90%);
+    --hero-orb: radial-gradient(circle, #ffd27a, #ff7a3d);
+    --hero-glow: rgba(215, 109, 119, .45);
+}
+
+.hero-proxima {
+    --hero-bg: linear-gradient(160deg, #3a0d14, #c0392b 90%);
+    --hero-orb: radial-gradient(circle, #ffb199, #ff0844);
+    --hero-glow: rgba(192, 57, 43, .45);
+}
+
+.hero-trappist {
+    --hero-bg: linear-gradient(160deg, #0f2027, #2c7a7b 90%);
+    --hero-orb: radial-gradient(circle, #b8fff0, #2ec4b6);
+    --hero-glow: rgba(46, 196, 182, .45);
+}

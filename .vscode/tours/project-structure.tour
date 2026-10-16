@@ -1,0 +1,56 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Project Structure",
+  "steps": [
+    {
+      "file": "StarMap.slnx",
+      "line": 1,
+      "description": "This solution is organized into three main areas: shared libraries in /Shared, individual site applications in /Sites, and a root-level proxy project."
+    },
+    {
+      "file": "Shared/SM.Common/Configuration/HostSettings.cs",
+      "line": 1,
+      "description": "The /Shared folder contains reusable project code. This common project is where cross-cutting configuration and shared values live for the rest of the solution."
+    },
+    {
+      "file": "Shared/SM.Core/Class1.cs",
+      "line": 1,
+      "description": "SM.Core is the application's core logic layer. It holds the central abstractions and business-facing code that other layers build on."
+    },
+    {
+      "file": "Shared/SM.Domain/Class1.cs",
+      "line": 1,
+      "description": "SM.Domain represents the business model and rules. It stays focused on domain concepts instead of infrastructure or user-interface concerns."
+    },
+    {
+      "file": "Shared/SM.Infrastructure/Class1.cs",
+      "line": 1,
+      "description": "SM.Infrastructure is where external concerns belong, such as service implementations, integrations, and supporting infrastructure code."
+    },
+    {
+      "file": "Sites/SM.Home/Program.cs",
+      "line": 1,
+      "description": "Each project under /Sites is a standalone ASP.NET app. SM.Home is the main landing site and follows the usual MVC pattern with controllers, views, and static assets."
+    },
+    {
+      "file": "Sites/SM.Kepler90/Program.cs",
+      "line": 1,
+      "description": "The remaining sites — Kepler-90, Proxima Centauri, and TRAPPIST-1 — are separate ASP.NET applications that share the same general structure but represent different destinations."
+    },
+    {
+      "file": "SM.Proxy/Program.cs",
+      "line": 1,
+      "description": "The proxy project exists at the solution root as a YARP reverse-proxy application that routes incoming requests to the site apps."
+    },
+    {
+      "file": "Tests/SM.Proxy.Tests/YarpProxyIntegrationTests.cs",
+      "line": 1,
+      "description": "The /Tests folder holds end-to-end tests that start the sites and the proxy, then send real HTTP requests through the proxy. See the YARP tour for more detail."
+    },
+    {
+      "file": "Tools/Start-OtelServer.ps1",
+      "line": 1,
+      "description": "The /Tools folder has a small PowerShell script that acts as a local OpenTelemetry (OTLP) receiver on port 4318. It echoes incoming telemetry to the console and a log file. See the YARP tour for more detail."
+    }
+  ]
+}

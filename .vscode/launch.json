@@ -6,45 +6,51 @@
     "configurations": [
         {
             "name": "C#: Kepler 90 Debug",
-            "type": "dotnet",
+            "type": "node-terminal",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Sites/SM.Kepler90/SM.Kepler90.csproj"
+            "command": "dotnet run --no-build --project Sites/SM.Kepler90/SM.Kepler90.csproj",
+            "cwd": "${workspaceFolder}"
         },
         {
             "name": "C#: Proxima Centauri Debug",
-            "type": "dotnet",
+            "type": "node-terminal",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Sites/SM.ProximaCentauri/SM.ProximaCentauri.csproj"
+            "command": "dotnet run --no-build --project Sites/SM.ProximaCentauri/SM.ProximaCentauri.csproj",
+            "cwd": "${workspaceFolder}"
         },
         {
             "name": "C#: TRAPPIST 1 Debug",
-            "type": "dotnet",
+            "type": "node-terminal",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Sites/SM.TRAPPIST1/SM.TRAPPIST1.csproj"
+            "command": "dotnet run --no-build --project Sites/SM.TRAPPIST1/SM.TRAPPIST1.csproj",
+            "cwd": "${workspaceFolder}"
         },
         {
-            "name": "C#:Home Debug",
-            "type": "dotnet",
+            "name": "C#: Home Debug",
+            "type": "node-terminal",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Sites/SM.Home/SM.Home.csproj"
+            "command": "dotnet run --no-build --project Sites/SM.Home/SM.Home.csproj",
+            "cwd": "${workspaceFolder}"
         },
         {
             "name": "C#: PROXY Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/SM.Proxy/SM.Proxy.csproj"
+            "projectPath": "${workspaceFolder}/SM.Proxy/SM.Proxy.csproj",
         },
-
     ],
     "compounds": [
         {
             "name": "Debug All",
             "configurations": [
+                "C#: Home Debug",
                 "C#: Kepler 90 Debug",
                 "C#: Proxima Centauri Debug",
                 "C#: PROXY Debug",
                 "C#: TRAPPIST 1 Debug"
-            ]
+            ],
+            "preLaunchTask": "Build Solution",
+            "stopAll": true
         }
     ]
 }
