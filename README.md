@@ -1,5 +1,8 @@
 # StarMap
 
+<img width="1489" height="465" alt="image" src="https://github.com/user-attachments/assets/01447d69-72d2-45c4-b424-b1e930883423" />
+
+
 A demonstration of a simple [YARP](https://microsoft.github.io/reverse-proxy/) (Yet Another Reverse Proxy) configuration that reverse proxies requests between multiple ASP.NET Core sites.
 
 ## Features
